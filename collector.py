@@ -52,7 +52,7 @@ class Collector(object):
                         kbytes - kilo bytes / 1024
         """
         for i in cnt.keys():
-            rid = self.counter.ensure_resource('interface', self.zone, i, parent_id)
+            rid = self.counter.ensure_resource('disk', self.zone, i, parent_id)
             self.counter.add(rid,'rd_kreq',cnt[i][0]/1000,ct)
             self.counter.add(rid,'rd_kbytes',cnt[i][1]/1024,ct)
             self.counter.add(rid,'wr_kreq',cnt[i][2]/1000,ct)
